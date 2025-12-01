@@ -3,82 +3,180 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>M-HEAL Resource Document</title>
+  <title>M-HEAL Resources</title>
   <meta name="description" content="M-HEAL Resources: CAD tutorials, 3D printing, PCB design, travel, and socially engaged design." />
+
+  <!-- Optional favicon (works best if you also add a PNG version) -->
+  <!-- <link rel="icon" href="assets/logo.png" /> -->
 
   <style>
     :root{
-      --bg:#0b0d12; --panel:#111523; --panel2:#0f1320;
-      --text:#e7eaf3; --muted:#aab2c5; --brand:#78a6ff; --brand2:#9ef0ff;
-      --border:rgba(255,255,255,.10);
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      /* Palette pulled from your logo */
+      --mheal-blue:  #0851CA;
+      --mheal-yellow:#FFD106;
+      --mheal-green: #98CF06;
+      --mheal-white: #FFFFFF;
+
+      /* Site neutrals */
+      --bg: #060A16;
+      --panel: rgba(12, 18, 38, .72);
+      --panel2: rgba(10, 15, 32, .62);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --border: rgba(255,255,255,.12);
+
       --radius: 18px;
+      --shadow: 0 14px 34px rgba(0,0,0,.35);
       --max: 980px;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    html{ scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior: auto; }
+    }
+
     body{
-      margin:0; font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--text); background:
-        radial-gradient(1200px 700px at 15% 10%, rgba(120,166,255,.20), transparent 55%),
-        radial-gradient(900px 600px at 85% 30%, rgba(158,240,255,.14), transparent 60%),
+      margin:0;
+      font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(1000px 600px at 15% 10%, rgba(8,81,202,.35), transparent 55%),
+        radial-gradient(900px 600px at 85% 25%, rgba(152,207,6,.18), transparent 60%),
+        radial-gradient(700px 500px at 55% 95%, rgba(255,209,6,.16), transparent 55%),
         var(--bg);
     }
-    a{color:var(--brand); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .skip{position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden}
-    .skip:focus{left:16px; top:16px; width:auto; height:auto; padding:10px 12px; background:var(--panel); border:1px solid var(--border); border-radius:12px; z-index:9999}
-    header{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(to bottom, rgba(11,13,18,.88), rgba(11,13,18,.62));
-      border-bottom:1px solid var(--border);
+
+    a{ color: var(--mheal-yellow); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    :focus-visible{
+      outline: 3px solid rgba(255,209,6,.75);
+      outline-offset: 3px;
+      border-radius: 12px;
     }
-    .wrap{max-width:var(--max); margin:0 auto; padding: 18px 18px;}
-    .topbar{display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap}
+
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 18px; }
+
+    .skip{
+      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip:focus{
+      left:16px; top:16px; width:auto; height:auto; padding:10px 12px;
+      background: rgba(12,18,38,.9);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      z-index: 9999;
+    }
+
+    header{
+      position: sticky; top:0; z-index: 50;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(to bottom, rgba(6,10,22,.90), rgba(6,10,22,.60));
+    }
+
+    .topbar{
+      display:flex; gap:14px;
+      align-items:center; justify-content:space-between;
+      flex-wrap:wrap;
+    }
+
     .brand{
       display:flex; align-items:center; gap:12px;
-      padding:8px 10px; border-radius:14px;
+      padding: 8px 10px;
+      border-radius: 16px;
+      background: rgba(12,18,38,.35);
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
     }
-    .dot{
-      width:12px; height:12px; border-radius:99px;
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      box-shadow: 0 0 0 5px rgba(120,166,255,.15);
+    .brand img{
+      width: 40px; height: 40px; border-radius: 12px;
+      box-shadow: 0 0 0 3px rgba(8,81,202,.22);
+      background: rgba(255,255,255,.06);
+      object-fit: cover;
     }
-    .brand h1{font-size:18px; margin:0}
-    .brand p{margin:0; color:var(--muted); font-size:13px}
+    .brandTitle{ display:flex; flex-direction:column; gap:2px; }
+    .brandTitle strong{ font-size: 15px; letter-spacing: .2px; }
+    .brandTitle span{ font-size: 13px; color: var(--muted); }
+
     nav{
       display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
     }
+
     .pill{
       display:inline-flex; align-items:center; gap:8px;
-      padding:9px 12px; border-radius:999px;
-      border:1px solid var(--border);
-      background: rgba(17,21,35,.65);
-      box-shadow: 0 1px 0 rgba(255,255,255,.04) inset;
-      font-size:14px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(8,81,202,.14);
+      color: var(--text);
+      font-size: 14px;
+      text-decoration:none;
     }
-    .pill:hover{background: rgba(17,21,35,.9); text-decoration:none}
-    main{padding: 26px 0 60px}
+    .pill:hover{
+      background: rgba(8,81,202,.22);
+      text-decoration:none;
+    }
+
+    main{ padding: 26px 0 60px; }
+
     .hero{
-      background: linear-gradient(180deg, rgba(17,21,35,.85), rgba(15,19,32,.75));
-      border:1px solid var(--border);
-      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.14);
       border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+      background:
+        linear-gradient(180deg, rgba(12,18,38,.78), rgba(10,15,32,.66));
       padding: 22px;
+      position: relative;
+      overflow: hidden;
     }
-    .hero h2{margin: 0 0 10px; font-size: 26px; letter-spacing:.2px}
-    .hero p{margin: 0 0 14px; color: var(--muted)}
-    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .hero:before{
+      content:"";
+      position:absolute; inset:-40px -60px auto auto;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,209,6,.35), transparent 65%);
+      transform: rotate(20deg);
+      pointer-events:none;
+      filter: blur(2px);
+    }
+    .hero h2{ margin:0 0 8px; font-size: 28px; letter-spacing:.2px; }
+    .hero p{ margin:0 0 14px; color: var(--muted); max-width: 70ch; }
+
+    .ctaRow{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; }
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 14px; border-radius: 14px;
-      border:1px solid var(--border);
-      background: rgba(120,166,255,.12);
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
       color: var(--text);
       text-decoration:none;
     }
-    .btn:hover{background: rgba(120,166,255,.18); text-decoration:none}
+    .btn:hover{ background: rgba(255,255,255,.09); text-decoration:none; }
+
+    .btnPrimary{
+      background: var(--mheal-yellow);
+      color: #0b1022;
+      border-color: rgba(0,0,0,.12);
+      font-weight: 650;
+    }
+    .btnPrimary:hover{
+      filter: brightness(.98);
+      text-decoration:none;
+    }
+
+    .note{
+      margin-top: 12px;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px dashed rgba(152,207,6,.55);
+      background: rgba(152,207,6,.08);
+      color: rgba(255,255,255,.76);
+      font-size: 14px;
+    }
+
     .grid{
       display:grid;
       grid-template-columns: 1fr;
@@ -86,42 +184,45 @@
       margin-top: 16px;
     }
     @media (min-width: 900px){
-      .grid{grid-template-columns: 1fr 1fr;}
+      .grid{ grid-template-columns: 1fr 1fr; }
     }
+
     section.card{
-      border:1px solid var(--border);
-      background: linear-gradient(180deg, rgba(17,21,35,.70), rgba(15,19,32,.70));
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(12,18,38,.68), rgba(10,15,32,.62));
       border-radius: var(--radius);
-      box-shadow: 0 12px 30px rgba(0,0,0,.22);
+      box-shadow: 0 10px 24px rgba(0,0,0,.22);
       padding: 18px;
-      scroll-margin-top: 92px;
+      scroll-margin-top: 96px;
+      position: relative;
+      overflow: hidden;
     }
-    section.card h3{margin:0 0 10px; font-size:18px}
-    .meta{color:var(--muted); font-size:14px; margin: 0 0 10px}
-    ul{margin: 10px 0 0; padding-left: 18px; color: var(--text)}
-    li{margin: 6px 0; color: var(--text)}
-    .note{
-      margin-top: 12px; padding:12px 12px;
-      border-radius: 14px;
-      border:1px dashed rgba(158,240,255,.35);
-      background: rgba(158,240,255,.06);
-      color: var(--muted);
-      font-size: 14px;
+    section.card:before{
+      content:"";
+      position:absolute; inset:0;
+      border-radius: inherit;
+      pointer-events:none;
+      background: radial-gradient(900px 240px at 10% 0%, rgba(8,81,202,.18), transparent 60%);
     }
+
+    section.card h3{ margin:0 0 8px; font-size: 18px; }
+    .meta{ margin:0 0 10px; color: var(--muted); font-size: 14px; }
+
+    ul{ margin: 10px 0 0; padding-left: 18px; }
+    li{ margin: 6px 0; }
+
     footer{
       margin-top: 24px;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid rgba(255,255,255,.10);
       padding-top: 18px;
       color: var(--muted);
       font-size: 14px;
     }
-    code.kbd{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.10);
-      padding: 2px 6px;
-      border-radius: 8px;
-      color: var(--text);
+
+    /* Little accent for strong text */
+    strong.accent{
+      color: var(--mheal-green);
+      font-weight: 750;
     }
   </style>
 </head>
@@ -132,20 +233,21 @@
   <header>
     <div class="wrap">
       <div class="topbar">
-        <div class="brand" aria-label="M-HEAL Resource Document">
-          <span class="dot" aria-hidden="true"></span>
-          <div>
-            <h1>M-HEAL Resource Document</h1>
-            <p>Skills, knowledge, and on-campus resources</p>
+        <!-- Brand (logo top-left) -->
+        <a class="brand" href="#top" aria-label="M-HEAL Resources (Back to top)">
+          <img src="assets/logo.webp" alt="M-HEAL logo" />
+          <div class="brandTitle">
+            <strong>M-HEAL Resources</strong>
+            <span>Skills, knowledge, and campus resources</span>
           </div>
-        </div>
+        </a>
 
         <nav aria-label="Section links">
-          <a class="pill" href="#cad">CAD Tutorials</a>
+          <a class="pill" href="#cad">CAD</a>
           <a class="pill" href="#printing">3D Printing</a>
-          <a class="pill" href="#pcb">PCB & Soldering</a>
+          <a class="pill" href="#pcb">PCB</a>
           <a class="pill" href="#travel">Travel</a>
-          <a class="pill" href="#sed">Socially Engaged Design</a>
+          <a class="pill" href="#sed">Social Design</a>
           <a class="pill" href="#contact">Contact</a>
         </nav>
       </div>
@@ -153,21 +255,21 @@
   </header>
 
   <main id="content" class="wrap">
-    <div class="hero">
-      <h2>Welcome to the M-HEAL Resources</h2>
+    <div id="top" class="hero">
+      <h2>Welcome to M-HEAL Resources</h2>
       <p>
-        This site is based on the M-HEAL Resources Doc — meant to help newer members build skills and
-        highlight useful resources across the team. Sections will keep expanding over time.
+        A living hub of tutorials, guides, and helpful links for M-HEAL members.
+        Use the section buttons above to jump around.
       </p>
 
       <div class="ctaRow">
-        <!-- TODO: Replace # with your Google Form URL from the doc -->
-        <a class="btn" href="#" target="_blank" rel="noopener">Suggest a new section (Google Form)</a>
+        <!-- TODO: Replace # with your Google Form URL -->
+        <a class="btn btnPrimary" href="#" target="_blank" rel="noopener">Suggest a new section</a>
         <a class="btn" href="#cad">Jump to CAD</a>
       </div>
 
       <div class="note">
-        Tip: Anywhere you see <code class="kbd">TODO</code>, paste in the real Google Doc or resource link.
+        Anywhere you see <strong class="accent">TODO</strong>, paste in the real Google Doc / resource link.
       </div>
     </div>
 
@@ -176,9 +278,8 @@
         <h3>CAD Tutorials</h3>
         <p class="meta">Quick references, step-by-step guides, and office hours.</p>
         <ul>
-          <!-- TODO: Paste the real links for these docs -->
-          <li><a href="#" target="_blank" rel="noopener">Solidworks Quick Reference Sheet</a> <span class="meta">(TODO: add link)</span></li>
-          <li><a href="#" target="_blank" rel="noopener">CAD Step-By-Step Guide</a> <span class="meta">(TODO: add link)</span></li>
+          <li><a href="#" target="_blank" rel="noopener">Solidworks Quick Reference Sheet</a> <span class="meta">(TODO)</span></li>
+          <li><a href="#" target="_blank" rel="noopener">CAD Step-By-Step Guide</a> <span class="meta">(TODO)</span></li>
           <li><strong>CAD Office Hours</strong> — biweekly, Fridays 1–3 PM</li>
           <li><strong>CAD workshops</strong> — once a month after recruitment week</li>
           <li>
@@ -194,8 +295,7 @@
         <h3>3D Printing + Prototype Testing Facilities</h3>
         <p class="meta">On-campus printing resources and prototype testing support.</p>
         <ul>
-          <!-- TODO: Paste the real link for this doc -->
-          <li><a href="#" target="_blank" rel="noopener">M-HEAL 3D Printing Resources On Campus</a> <span class="meta">(TODO: add link)</span></li>
+          <li><a href="#" target="_blank" rel="noopener">M-HEAL 3D Printing Resources On Campus</a> <span class="meta">(TODO)</span></li>
         </ul>
       </section>
 
@@ -216,8 +316,7 @@
         <h3>Travel</h3>
         <p class="meta">Trip planning and guidelines.</p>
         <ul>
-          <!-- TODO: Paste the real link for this doc -->
-          <li><a href="#" target="_blank" rel="noopener">Travel Guide 2025</a> <span class="meta">(TODO: add link)</span></li>
+          <li><a href="#" target="_blank" rel="noopener">Travel Guide 2025</a> <span class="meta">(TODO)</span></li>
         </ul>
       </section>
 
@@ -225,8 +324,7 @@
         <h3>Intro to Socially Engaged Design</h3>
         <p class="meta">Foundations and key ideas for M-HEAL’s work.</p>
         <ul>
-          <!-- TODO: Paste the real link for this doc -->
-          <li><a href="#" target="_blank" rel="noopener">Intro to Socially Engaged Design</a> <span class="meta">(TODO: add link)</span></li>
+          <li><a href="#" target="_blank" rel="noopener">Intro to Socially Engaged Design</a> <span class="meta">(TODO)</span></li>
         </ul>
       </section>
 
@@ -239,14 +337,11 @@
           <li>Abhro: <a href="mailto:abhro@umich.edu">abhro@umich.edu</a></li>
           <li>Saad: <a href="mailto:alrazzi@umich.edu">alrazzi@umich.edu</a></li>
         </ul>
-        <div class="note">
-          If you want, paste me the missing Google Doc / Form links and I’ll wire them in everywhere the page says <code class="kbd">TODO</code>.
-        </div>
       </section>
     </div>
 
     <footer>
-      Built from the team’s “M-HEAL Resource Document” content. Keep iterating as sections expand.
+      Built for M-HEAL. Palette and branding aligned to the team logo.
     </footer>
   </main>
 </body>
