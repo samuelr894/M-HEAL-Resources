@@ -249,6 +249,8 @@
           <a class="pill" href="#travel">Travel</a>
           <a class="pill" href="#sed">Social Design</a>
           <a class="pill" href="#contact">Contact</a>
+          <a class="pill" href="#calendar">Calendar</a>
+
         </nav>
       </div>
     </div>
@@ -337,35 +339,32 @@
         </ul>
       </section>
     </div>
-<h4 style="margin-top:16px; margin-bottom:8px;">Team Calendar</h4>
+    <div class="grid">
+      <!-- all your sections like #cad, #printing, #pcb, #travel, #sed, #contact -->
+    </div>
 
-<div class="calendarEmbed" aria-label="M-HEAL Google Calendar">
-  <iframe
-    title="M-HEAL Google Calendar"
-    src="https://calendar.google.com/calendar/embed?src=160tc9i42jd2ede6bg2knolnt4%40group.calendar.google.com&ctz=America%2FNew_York"
-    frameborder="0"
-    scrolling="no"
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-  ></iframe>
-</div>
-.calendarEmbed{
-  margin-top: 10px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.04);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 24px rgba(0,0,0,.18);
-  aspect-ratio: 4 / 3;   /* keeps it responsive */
-  width: 100%;
-}
+    <!-- Calendar section -->
+    <section id="calendar" class="card">
+      <h3>Team Calendar</h3>
+      <p class="meta">Meetings, workshops, and key dates.</p>
+      <div style="margin-top:10px; overflow:auto;">
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=160tc9i42jd2ede6bg2knolnt4%40group.calendar.google.com&ctz=America%2FNew_York"
+          style="border:0"
+          width="100%"
+          height="600"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
+      </div>
+    </section>
 
-.calendarEmbed iframe{
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-}
+    <footer>
+      Built for M-HEAL. Palette and branding aligned to the team logo.
+    </footer>
+  </main>
+</body>
+
 
   </section><footer>
       Built for M-HEAL.
