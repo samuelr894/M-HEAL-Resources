@@ -1,2 +1,253 @@
-# M-HEAL-Resources
-This is a resource website hosted on Github dedicated to Michigan Engineering student team M-HEAL
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>M-HEAL Resource Document</title>
+  <meta name="description" content="M-HEAL Resources: CAD tutorials, 3D printing, PCB design, travel, and socially engaged design." />
+
+  <style>
+    :root{
+      --bg:#0b0d12; --panel:#111523; --panel2:#0f1320;
+      --text:#e7eaf3; --muted:#aab2c5; --brand:#78a6ff; --brand2:#9ef0ff;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 980px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text); background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(120,166,255,.20), transparent 55%),
+        radial-gradient(900px 600px at 85% 30%, rgba(158,240,255,.14), transparent 60%),
+        var(--bg);
+    }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .skip{position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden}
+    .skip:focus{left:16px; top:16px; width:auto; height:auto; padding:10px 12px; background:var(--panel); border:1px solid var(--border); border-radius:12px; z-index:9999}
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(11,13,18,.88), rgba(11,13,18,.62));
+      border-bottom:1px solid var(--border);
+    }
+    .wrap{max-width:var(--max); margin:0 auto; padding: 18px 18px;}
+    .topbar{display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap}
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      padding:8px 10px; border-radius:14px;
+    }
+    .dot{
+      width:12px; height:12px; border-radius:99px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 0 0 5px rgba(120,166,255,.15);
+    }
+    .brand h1{font-size:18px; margin:0}
+    .brand p{margin:0; color:var(--muted); font-size:13px}
+    nav{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:9px 12px; border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(17,21,35,.65);
+      box-shadow: 0 1px 0 rgba(255,255,255,.04) inset;
+      font-size:14px;
+    }
+    .pill:hover{background: rgba(17,21,35,.9); text-decoration:none}
+    main{padding: 26px 0 60px}
+    .hero{
+      background: linear-gradient(180deg, rgba(17,21,35,.85), rgba(15,19,32,.75));
+      border:1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 22px;
+    }
+    .hero h2{margin: 0 0 10px; font-size: 26px; letter-spacing:.2px}
+    .hero p{margin: 0 0 14px; color: var(--muted)}
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px; border-radius: 14px;
+      border:1px solid var(--border);
+      background: rgba(120,166,255,.12);
+      color: var(--text);
+      text-decoration:none;
+    }
+    .btn:hover{background: rgba(120,166,255,.18); text-decoration:none}
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (min-width: 900px){
+      .grid{grid-template-columns: 1fr 1fr;}
+    }
+    section.card{
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(17,21,35,.70), rgba(15,19,32,.70));
+      border-radius: var(--radius);
+      box-shadow: 0 12px 30px rgba(0,0,0,.22);
+      padding: 18px;
+      scroll-margin-top: 92px;
+    }
+    section.card h3{margin:0 0 10px; font-size:18px}
+    .meta{color:var(--muted); font-size:14px; margin: 0 0 10px}
+    ul{margin: 10px 0 0; padding-left: 18px; color: var(--text)}
+    li{margin: 6px 0; color: var(--text)}
+    .note{
+      margin-top: 12px; padding:12px 12px;
+      border-radius: 14px;
+      border:1px dashed rgba(158,240,255,.35);
+      background: rgba(158,240,255,.06);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    footer{
+      margin-top: 24px;
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    code.kbd{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      padding: 2px 6px;
+      border-radius: 8px;
+      color: var(--text);
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header>
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand" aria-label="M-HEAL Resource Document">
+          <span class="dot" aria-hidden="true"></span>
+          <div>
+            <h1>M-HEAL Resource Document</h1>
+            <p>Skills, knowledge, and on-campus resources</p>
+          </div>
+        </div>
+
+        <nav aria-label="Section links">
+          <a class="pill" href="#cad">CAD Tutorials</a>
+          <a class="pill" href="#printing">3D Printing</a>
+          <a class="pill" href="#pcb">PCB & Soldering</a>
+          <a class="pill" href="#travel">Travel</a>
+          <a class="pill" href="#sed">Socially Engaged Design</a>
+          <a class="pill" href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="wrap">
+    <div class="hero">
+      <h2>Welcome to the M-HEAL Resources</h2>
+      <p>
+        This site is based on the M-HEAL Resources Doc — meant to help newer members build skills and
+        highlight useful resources across the team. Sections will keep expanding over time.
+      </p>
+
+      <div class="ctaRow">
+        <!-- TODO: Replace # with your Google Form URL from the doc -->
+        <a class="btn" href="#" target="_blank" rel="noopener">Suggest a new section (Google Form)</a>
+        <a class="btn" href="#cad">Jump to CAD</a>
+      </div>
+
+      <div class="note">
+        Tip: Anywhere you see <code class="kbd">TODO</code>, paste in the real Google Doc or resource link.
+      </div>
+    </div>
+
+    <div class="grid">
+      <section id="cad" class="card">
+        <h3>CAD Tutorials</h3>
+        <p class="meta">Quick references, step-by-step guides, and office hours.</p>
+        <ul>
+          <!-- TODO: Paste the real links for these docs -->
+          <li><a href="#" target="_blank" rel="noopener">Solidworks Quick Reference Sheet</a> <span class="meta">(TODO: add link)</span></li>
+          <li><a href="#" target="_blank" rel="noopener">CAD Step-By-Step Guide</a> <span class="meta">(TODO: add link)</span></li>
+          <li><strong>CAD Office Hours</strong> — biweekly, Fridays 1–3 PM</li>
+          <li><strong>CAD workshops</strong> — once a month after recruitment week</li>
+          <li>
+            Recording of previous workshop:
+            <a href="https://leccap.engin.umich.edu/leccap/site/lka1uwh6vavnl7kfe00" target="_blank" rel="noopener">
+              Leccap link
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="printing" class="card">
+        <h3>3D Printing + Prototype Testing Facilities</h3>
+        <p class="meta">On-campus printing resources and prototype testing support.</p>
+        <ul>
+          <!-- TODO: Paste the real link for this doc -->
+          <li><a href="#" target="_blank" rel="noopener">M-HEAL 3D Printing Resources On Campus</a> <span class="meta">(TODO: add link)</span></li>
+        </ul>
+      </section>
+
+      <section id="pcb" class="card">
+        <h3>PCB Design, Soldering Workshops & More</h3>
+        <p class="meta">Workshops and learning modules through UMich EECS.</p>
+        <ul>
+          <li>
+            EECS lessons:
+            <a href="https://www.eecs.umich.edu/hub/lessons.html" target="_blank" rel="noopener">
+              https://www.eecs.umich.edu/hub/lessons.html
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="travel" class="card">
+        <h3>Travel</h3>
+        <p class="meta">Trip planning and guidelines.</p>
+        <ul>
+          <!-- TODO: Paste the real link for this doc -->
+          <li><a href="#" target="_blank" rel="noopener">Travel Guide 2025</a> <span class="meta">(TODO: add link)</span></li>
+        </ul>
+      </section>
+
+      <section id="sed" class="card">
+        <h3>Intro to Socially Engaged Design</h3>
+        <p class="meta">Foundations and key ideas for M-HEAL’s work.</p>
+        <ul>
+          <!-- TODO: Paste the real link for this doc -->
+          <li><a href="#" target="_blank" rel="noopener">Intro to Socially Engaged Design</a> <span class="meta">(TODO: add link)</span></li>
+        </ul>
+      </section>
+
+      <section id="contact" class="card">
+        <h3>Contact</h3>
+        <p class="meta">Questions, concerns, or want to add resources?</p>
+        <ul>
+          <li>Sam: <a href="mailto:zianren@umich.edu">zianren@umich.edu</a></li>
+          <li>Kavin: <a href="mailto:kavink@umich.edu">kavink@umich.edu</a></li>
+          <li>Abhro: <a href="mailto:abhro@umich.edu">abhro@umich.edu</a></li>
+          <li>Saad: <a href="mailto:alrazzi@umich.edu">alrazzi@umich.edu</a></li>
+        </ul>
+        <div class="note">
+          If you want, paste me the missing Google Doc / Form links and I’ll wire them in everywhere the page says <code class="kbd">TODO</code>.
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      Built from the team’s “M-HEAL Resource Document” content. Keep iterating as sections expand.
+    </footer>
+  </main>
+</body>
+</html>
