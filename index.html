@@ -36,6 +36,56 @@
     @media (prefers-reduced-motion: reduce){
       html{ scroll-behavior: auto; }
     }
+        .wideCard{
+      grid-column: 1 / -1;
+    }
+
+    .logoBanner{
+      margin-top: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 16px;
+      overflow: hidden;
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 10px 24px rgba(0,0,0,.20);
+    }
+
+    .logoBanner img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+
+    .subgrid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    @media (min-width: 800px){
+      .subgrid{
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .resourceGroup{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      padding: 14px;
+      background: rgba(255,255,255,.04);
+    }
+
+    .resourceGroup h4{
+      margin: 0 0 8px;
+      font-size: 16px;
+      color: var(--mheal-green);
+    }
+
+    .resourceGroup p{
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
 
     body{
       margin:0;
@@ -182,6 +232,173 @@
       grid-template-columns: 1fr;
       gap: 14px;
       margin-top: 16px;
+            <section id="opportunities" class="card wideCard">
+        <h3>Research, Job, and Volunteer Opportunities</h3>
+        <p class="meta">Volunteer, job, research-adjacent, and professional development resources shared in the M-HEAL newsletter.</p>
+
+        <div class="logoBanner">
+          <img
+            src="https://mcusercontent.com/b111fbdf194645a95f4cb895d/images/e99b8937-258e-4564-944c-370923e5cb0a.png"
+            alt="M-HEAL newsletter banner" />
+        </div>
+
+        <div class="subgrid">
+          <div class="resourceGroup">
+            <h4>Volunteer Opportunities</h4>
+            <p>Volunteer roles from both UM and non-UM organizations, with the list updated as new opportunities are found.</p>
+            <ul>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=9b776851ac&e=2af693dbf9" target="_blank" rel="noopener">
+                  Volunteer opportunities list
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="resourceGroup">
+            <h4>Job Opportunities</h4>
+            <p>M7 Health is recruiting software engineers for internships and full-time roles.</p>
+            <ul>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=aab1c5dd89&e=2af693dbf9" target="_blank" rel="noopener">
+                  M7 Health website
+                </a>
+              </li>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=3fec1e53cb&e=2af693dbf9" target="_blank" rel="noopener">
+                  Job description
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="resourceGroup">
+            <h4>Professional Development — Ross Students</h4>
+            <ul>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=8a65db4ca3&e=2af693dbf9" target="_blank" rel="noopener">
+                  Ross Communication Consultants
+                </a> — Writing help for coursework and applications.
+              </li>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=674ba95994&e=2af693dbf9" target="_blank" rel="noopener">
+                  Tozzi Electronic Business and Finance Center
+                </a> — Trading floor and e-commerce lab experience.
+              </li>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=9fc8580c6e&e=2af693dbf9" target="_blank" rel="noopener">
+                  Ross Career Development (CDO)
+                </a> — Career search support and employer connections.
+              </li>
+            </ul>
+          </div>
+
+          <div class="resourceGroup">
+            <h4>Professional Development — All Students</h4>
+            <ul>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=4d8dd67d75&e=2af693dbf9" target="_blank" rel="noopener">
+                  Business + Impact
+                </a>
+              </li>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=7754c7772e&e=2af693dbf9" target="_blank" rel="noopener">
+                  Sanger Leadership Center
+                </a>
+              </li>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=fc9f473730&e=2af693dbf9" target="_blank" rel="noopener">
+                  Zell Lurie Institute (ZLI)
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="resourceGroup">
+            <h4>College of Engineering Resources</h4>
+            <ul>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=eb0a4c566f&e=2af693dbf9" target="_blank" rel="noopener">
+                  Engineering Career Resources Center
+                </a>
+              </li>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=14b7ae2f14&e=2af693dbf9" target="_blank" rel="noopener">
+                  Advising Appointments
+                </a>
+              </li>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=ab6c305508&e=2af693dbf9" target="_blank" rel="noopener">
+                  Schedule of Fall Workshops
+                </a>
+              </li>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=a43ba9f6b0&e=2af693dbf9" target="_blank" rel="noopener">
+                  Employer Events Calendar
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="resourceGroup">
+            <h4>UCC + ECRC</h4>
+            <ul>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=474ca15fd9&e=2af693dbf9" target="_blank" rel="noopener">
+                  Engineering Career Resource Center calendar
+                </a>
+              </li>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=803ebf8d5c&e=2af693dbf9" target="_blank" rel="noopener">
+                  Public Health graduate programs
+                </a>
+              </li>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=a288705bd0&e=2af693dbf9" target="_blank" rel="noopener">
+                  TONS of Upcoming Career-related events!
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="resourceGroup">
+            <h4>School of Public Health Career Development &amp; Resources</h4>
+            <ul>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=6c24b0dc5e&e=2af693dbf9" target="_blank" rel="noopener">
+                  Internship Resources
+                </a>
+              </li>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=936520e2f4&e=2af693dbf9" target="_blank" rel="noopener">
+                  Michigan Public Health Connect
+                </a>
+              </li>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=92def7e528&e=2af693dbf9" target="_blank" rel="noopener">
+                  Michigan Public Health Initiatives and News
+                </a>
+              </li>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=e7f18e9a02&e=2af693dbf9" target="_blank" rel="noopener">
+                  Michigan Public Health Online Learning Hub
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="resourceGroup">
+            <h4>Pre-Health Resources</h4>
+            <ul>
+              <li>
+                <a href="https://umich.us13.list-manage.com/track/click?u=b111fbdf194645a95f4cb895d&id=d52881871a&e=2af693dbf9" target="_blank" rel="noopener">
+                  University Career Center
+                </a> — Pre-health resources on extracurriculars, applications, interviews, and more.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     }
     @media (min-width: 900px){
       .grid{ grid-template-columns: 1fr 1fr; }
@@ -243,6 +460,7 @@
         </a>
 
         <nav aria-label="Section links">
+          <a class="pill" href="#opportunities">Opportunities</a>
           <a class="pill" href="#cad">CAD</a>
           <a class="pill" href="#printing">3D Printing</a>
           <a class="pill" href="#pcb">PCB</a>
