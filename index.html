@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>M-HEAL Resources</title>
-  <meta name="description" content="M-HEAL Resources: CAD tutorials, 3D printing, PCB design, travel, and socially engaged design." />
+  <meta name="description" content="M-HEAL Resources: CAD tutorials, 3D printing, PCB design, travel, socially engaged design, and opportunities." />
 
   <!-- Optional favicon (works best if you also add a PNG version) -->
   <!-- <link rel="icon" href="assets/logo.png" /> -->
@@ -35,56 +35,6 @@
     html{ scroll-behavior: smooth; }
     @media (prefers-reduced-motion: reduce){
       html{ scroll-behavior: auto; }
-    }
-        .wideCard{
-      grid-column: 1 / -1;
-    }
-
-    .logoBanner{
-      margin-top: 14px;
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 16px;
-      overflow: hidden;
-      background: rgba(255,255,255,.04);
-      box-shadow: 0 10px 24px rgba(0,0,0,.20);
-    }
-
-    .logoBanner img{
-      display:block;
-      width:100%;
-      height:auto;
-    }
-
-    .subgrid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    @media (min-width: 800px){
-      .subgrid{
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .resourceGroup{
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 16px;
-      padding: 14px;
-      background: rgba(255,255,255,.04);
-    }
-
-    .resourceGroup h4{
-      margin: 0 0 8px;
-      font-size: 16px;
-      color: var(--mheal-green);
-    }
-
-    .resourceGroup p{
-      margin: 0 0 8px;
-      color: var(--muted);
-      font-size: 14px;
     }
 
     body{
@@ -232,7 +182,200 @@
       grid-template-columns: 1fr;
       gap: 14px;
       margin-top: 16px;
-            <section id="opportunities" class="card wideCard">
+    }
+    @media (min-width: 900px){
+      .grid{ grid-template-columns: 1fr 1fr; }
+    }
+
+    section.card{
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(12,18,38,.68), rgba(10,15,32,.62));
+      border-radius: var(--radius);
+      box-shadow: 0 10px 24px rgba(0,0,0,.22);
+      padding: 18px;
+      scroll-margin-top: 96px;
+      position: relative;
+      overflow: hidden;
+    }
+    section.card:before{
+      content:"";
+      position:absolute; inset:0;
+      border-radius: inherit;
+      pointer-events:none;
+      background: radial-gradient(900px 240px at 10% 0%, rgba(8,81,202,.18), transparent 60%);
+    }
+
+    section.card h3{ margin:0 0 8px; font-size: 18px; }
+    .meta{ margin:0 0 10px; color: var(--muted); font-size: 14px; }
+
+    ul{ margin: 10px 0 0; padding-left: 18px; }
+    li{ margin: 6px 0; }
+
+    footer{
+      margin-top: 24px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Little accent for strong text */
+    strong.accent{
+      color: var(--mheal-green);
+      font-weight: 750;
+    }
+
+    .wideCard{
+      grid-column: 1 / -1;
+    }
+
+    .logoBanner{
+      margin-top: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 16px;
+      overflow: hidden;
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 10px 24px rgba(0,0,0,.20);
+    }
+
+    .logoBanner img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+
+    .subgrid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    @media (min-width: 800px){
+      .subgrid{
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .resourceGroup{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      padding: 14px;
+      background: rgba(255,255,255,.04);
+    }
+
+    .resourceGroup h4{
+      margin: 0 0 8px;
+      font-size: 16px;
+      color: var(--mheal-green);
+    }
+
+    .resourceGroup p{
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header>
+    <div class="wrap">
+      <div class="topbar">
+        <a class="brand" href="#top" aria-label="M-HEAL Resources (Back to top)">
+          <img src="assets/logo.webp" alt="M-HEAL logo" />
+          <div class="brandTitle">
+            <strong>M-HEAL Resources</strong>
+            <span>Skills, knowledge, and campus resources</span>
+          </div>
+        </a>
+
+        <nav aria-label="Section links">
+          <a class="pill" href="#cad">CAD</a>
+          <a class="pill" href="#printing">3D Printing</a>
+          <a class="pill" href="#pcb">PCB</a>
+          <a class="pill" href="#travel">Travel</a>
+          <a class="pill" href="#sed">Social Design</a>
+          <a class="pill" href="#opportunities">Opportunities</a>
+          <a class="pill" href="#contact">Contact</a>
+          <a class="pill" href="#calendar">Calendar</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="wrap">
+    <div id="top" class="hero">
+      <h2>Welcome to M-HEAL Resources</h2>
+      <p>
+        A living hub of tutorials, guides, and helpful links for M-HEAL members.
+        Use the section buttons above to jump around.
+      </p>
+
+      <div class="ctaRow">
+        <a class="btn btnPrimary" href="https://docs.google.com/forms/d/e/1FAIpQLSda1E4dfUZMpB3eIui3kDhaVf6Pp9WIW2JY_XjVHhKEBbbmYg/viewform?usp=sharing&ouid=107983485774177575924" target="_blank" rel="noopener">Suggest a new section</a>
+        <a class="btn" href="#cad">Jump to CAD</a>
+      </div>
+    </div>
+
+    <div class="grid">
+      <section id="cad" class="card">
+        <h3>CAD Tutorials</h3>
+        <p class="meta">Quick references, step-by-step guides, and office hours.</p>
+        <ul>
+          <li><a href="https://docs.google.com/spreadsheets/d/1iOFBn0hWGq11WrpMfV2zxgL9yBKybXKx98yEGPrEusE/edit?gid=0#gid=0" target="_blank" rel="noopener">Solidworks Quick Reference Sheet</a></li>
+          <li><a href="https://drive.google.com/drive/folders/1x7kh9LGp7tqMfvy6Ly72tSdhJ9raMbMf?usp=sharing" target="_blank" rel="noopener">CAD Step-By-Step Guide</a></li>
+          <li><strong>CAD Office Hours</strong> — biweekly, Fridays 1–3 PM</li>
+          <li><strong>CAD workshops</strong> — once a month after recruitment week</li>
+          <li>
+            Recording of 10/21 workshop:
+            <a href="https://leccap.engin.umich.edu/leccap/site/lka1uwh6vavnl7kfe00" target="_blank" rel="noopener">
+              Leccap link
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="printing" class="card">
+        <h3>3D Printing + Prototype Testing Facilities</h3>
+        <p class="meta">On-campus printing resources and prototype testing support.</p>
+        <ul>
+          <li><a href="https://docs.google.com/document/d/1JyaiFFd2sMhpCdOqZyEMdX_3_C_nllSNCiv5_rXI10w/edit?tab=t.0" target="_blank" rel="noopener">M-HEAL 3D Printing Resources On Campus</a></li>
+        </ul>
+      </section>
+
+      <section id="pcb" class="card">
+        <h3>PCB Design, Soldering Workshops &amp; More</h3>
+        <p class="meta">Workshops and learning modules through UMich EECS.</p>
+        <ul>
+          <li>
+            EECS lessons:
+            <a href="https://www.eecs.umich.edu/hub/lessons.html" target="_blank" rel="noopener">
+              https://www.eecs.umich.edu/hub/lessons.html
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="travel" class="card">
+        <h3>Travel</h3>
+        <p class="meta">Trip planning and guidelines.</p>
+        <ul>
+          <li><a href="https://www.canva.com/design/DAGRWhY2XQs/I9O8GsQTyaJWDxIdtjAiYA/edit" target="_blank" rel="noopener">Travel Guide 2025</a></li>
+        </ul>
+      </section>
+
+      <section id="sed" class="card">
+        <h3>Intro to Socially Engaged Design</h3>
+        <p class="meta">Foundations and key ideas for M-HEAL’s work.</p>
+        <ul>
+          <li><a href="https://docs.google.com/document/d/1OEw2dwO3lmlBiCbuvlILDujRw2-zDHhshpsgvBicMx0/edit?usp=sharing" target="_blank" rel="noopener">Intro to Socially Engaged Design</a></li>
+        </ul>
+      </section>
+
+      <section id="opportunities" class="card wideCard">
         <h3>Research, Job, and Volunteer Opportunities</h3>
         <p class="meta">Volunteer, job, research-adjacent, and professional development resources shared in the M-HEAL newsletter.</p>
 
@@ -399,152 +542,6 @@
           </div>
         </div>
       </section>
-    }
-    @media (min-width: 900px){
-      .grid{ grid-template-columns: 1fr 1fr; }
-    }
-
-    section.card{
-      border: 1px solid rgba(255,255,255,.14);
-      background: linear-gradient(180deg, rgba(12,18,38,.68), rgba(10,15,32,.62));
-      border-radius: var(--radius);
-      box-shadow: 0 10px 24px rgba(0,0,0,.22);
-      padding: 18px;
-      scroll-margin-top: 96px;
-      position: relative;
-      overflow: hidden;
-    }
-    section.card:before{
-      content:"";
-      position:absolute; inset:0;
-      border-radius: inherit;
-      pointer-events:none;
-      background: radial-gradient(900px 240px at 10% 0%, rgba(8,81,202,.18), transparent 60%);
-    }
-
-    section.card h3{ margin:0 0 8px; font-size: 18px; }
-    .meta{ margin:0 0 10px; color: var(--muted); font-size: 14px; }
-
-    ul{ margin: 10px 0 0; padding-left: 18px; }
-    li{ margin: 6px 0; }
-
-    footer{
-      margin-top: 24px;
-      border-top: 1px solid rgba(255,255,255,.10);
-      padding-top: 18px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* Little accent for strong text */
-    strong.accent{
-      color: var(--mheal-green);
-      font-weight: 750;
-    }
-  </style>
-</head>
-
-<body>
-  <a class="skip" href="#content">Skip to content</a>
-
-  <header>
-    <div class="wrap">
-      <div class="topbar">
-        <!-- Brand (logo top-left) -->
-        <a class="brand" href="#top" aria-label="M-HEAL Resources (Back to top)">
-          <img src="assets/logo.webp" alt="M-HEAL logo" />
-          <div class="brandTitle">
-            <strong>M-HEAL Resources</strong>
-            <span>Skills, knowledge, and campus resources</span>
-          </div>
-        </a>
-
-        <nav aria-label="Section links">
-          <a class="pill" href="#opportunities">Opportunities</a>
-          <a class="pill" href="#cad">CAD</a>
-          <a class="pill" href="#printing">3D Printing</a>
-          <a class="pill" href="#pcb">PCB</a>
-          <a class="pill" href="#travel">Travel</a>
-          <a class="pill" href="#sed">Social Design</a>
-          <a class="pill" href="#contact">Contact</a>
-          <a class="pill" href="#calendar">Calendar</a>
-
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <main id="content" class="wrap">
-    <div id="top" class="hero">
-      <h2>Welcome to M-HEAL Resources</h2>
-      <p>
-        A living hub of tutorials, guides, and helpful links for M-HEAL members.
-        Use the section buttons above to jump around.
-      </p>
-
-      <div class="ctaRow">
-        <!-- TODO: Replace # with your Google Form URL -->
-        <a class="btn btnPrimary" href="https://docs.google.com/forms/d/e/1FAIpQLSda1E4dfUZMpB3eIui3kDhaVf6Pp9WIW2JY_XjVHhKEBbbmYg/viewform?usp=sharing&ouid=107983485774177575924" target="_blank" rel="noopener">Suggest a new section</a>
-        <a class="btn" href="#cad">Jump to CAD</a>
-      </div>
-
-      
-    </div>
-
-    <div class="grid">
-      <section id="cad" class="card">
-        <h3>CAD Tutorials</h3>
-        <p class="meta">Quick references, step-by-step guides, and office hours.</p>
-        <ul>
-          <li><a href="https://docs.google.com/spreadsheets/d/1iOFBn0hWGq11WrpMfV2zxgL9yBKybXKx98yEGPrEusE/edit?gid=0#gid=0" target="_blank" rel="noopener">Solidworks Quick Reference Sheet</a> </li>
-          <li><a href="https://drive.google.com/drive/folders/1x7kh9LGp7tqMfvy6Ly72tSdhJ9raMbMf?usp=sharing" target="_blank" rel="noopener">CAD Step-By-Step Guide</a> </li>
-          <li><strong>CAD Office Hours</strong> — biweekly, Fridays 1–3 PM</li>
-          <li><strong>CAD workshops</strong> — once a month after recruitment week</li>
-          <li>
-            Recording of 10/21 workshop:
-            <a href="https://leccap.engin.umich.edu/leccap/site/lka1uwh6vavnl7kfe00" target="_blank" rel="noopener">
-              Leccap link
-            </a>
-          </li>
-        </ul>
-      </section>
-
-      <section id="printing" class="card">
-        <h3>3D Printing + Prototype Testing Facilities</h3>
-        <p class="meta">On-campus printing resources and prototype testing support.</p>
-        <ul>
-          <li><a href="https://docs.google.com/document/d/1JyaiFFd2sMhpCdOqZyEMdX_3_C_nllSNCiv5_rXI10w/edit?tab=t.0" target="_blank" rel="noopener">M-HEAL 3D Printing Resources On Campus</a> </li>
-        </ul>
-      </section>
-
-      <section id="pcb" class="card">
-        <h3>PCB Design, Soldering Workshops & More</h3>
-        <p class="meta">Workshops and learning modules through UMich EECS.</p>
-        <ul>
-          <li>
-            EECS lessons:
-            <a href="https://www.eecs.umich.edu/hub/lessons.html" target="_blank" rel="noopener">
-              https://www.eecs.umich.edu/hub/lessons.html
-            </a>
-          </li>
-        </ul>
-      </section>
-
-      <section id="travel" class="card">
-        <h3>Travel</h3>
-        <p class="meta">Trip planning and guidelines.</p>
-        <ul>
-          <li><a href="https://www.canva.com/design/DAGRWhY2XQs/I9O8GsQTyaJWDxIdtjAiYA/edit" target="_blank" rel="noopener">Travel Guide 2025</a> </li>
-        </ul>
-      </section>
-
-      <section id="sed" class="card">
-        <h3>Intro to Socially Engaged Design</h3>
-        <p class="meta">Foundations and key ideas for M-HEAL’s work.</p>
-        <ul>
-          <li><a href="https://docs.google.com/document/d/1OEw2dwO3lmlBiCbuvlILDujRw2-zDHhshpsgvBicMx0/edit?usp=sharing" target="_blank" rel="noopener">Intro to Socially Engaged Design</a> </li>
-        </ul>
-      </section>
 
       <section id="contact" class="card">
         <h3>Contact</h3>
@@ -557,11 +554,7 @@
         </ul>
       </section>
     </div>
-    <div class="grid">
-      <!-- all your sections like #cad, #printing, #pcb, #travel, #sed, #contact -->
-    </div>
 
-    <!-- Calendar section -->
     <section id="calendar" class="card">
       <h3>M-HEAL Calendar</h3>
       <p class="meta">Meetings, workshops, and key dates.</p>
@@ -575,9 +568,9 @@
           scrolling="no">
         </iframe>
       </div>
+    </section>
 
-
-  </section><footer>
+    <footer>
       Built for M-HEAL.
     </footer>
   </main>
